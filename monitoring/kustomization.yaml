@@ -17,3 +17,4 @@ configMapGenerator:
   - name: grafana-dashboard-llm-performance
     files:
       - grafana-dashboard-llm-performance.json
+      - vllm-dashboad.json

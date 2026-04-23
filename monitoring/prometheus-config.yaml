@@ -47,7 +47,7 @@ data:
       - role: pod
         namespaces:
           names:
-          - demo-llm
+          - llm-test
       scheme: https
       tls_config:
         insecure_skip_verify: true
@@ -78,7 +78,7 @@ data:
       - role: endpoints
         namespaces:
           names:
-          - demo-llm
+          - llm-test
       relabel_configs:
       - source_labels: [__meta_kubernetes_service_name]
         action: keep
@@ -92,7 +92,7 @@ data:
       - role: endpoints
         namespaces:
           names:
-          - demo-llm
+          - llm-test
       relabel_configs:
       - source_labels: [__meta_kubernetes_service_label_llm_d_ai_model]
         action: keep
@@ -118,7 +118,7 @@ data:
         namespaces:
           names:
           - envoy-gateway-system
-          - demo-llm
+          - llm-test
       relabel_configs:
       - source_labels: [__meta_kubernetes_service_name]
         action: keep
@@ -132,7 +132,7 @@ data:
       - role: endpoints
         namespaces:
           names:
-          - demo-llm
+          - llm-test
       scheme: http
       bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
       relabel_configs:
@@ -163,7 +163,7 @@ data:
       - role: pod
         namespaces:
           names:
-          - demo-llm
+          - llm-test
       scheme: https
       tls_config:
         insecure_skip_verify: true
@@ -201,7 +201,7 @@ data:
       - role: pod
         namespaces:
           names:
-          - demo-llm
+          - llm-test
       scheme: http
       metrics_path: /metrics
       relabel_configs:
@@ -240,7 +240,7 @@ data:
       - role: pod
         namespaces:
           names:
-          - demo-llm
+          - llm-test
       scheme: https
       tls_config:
         insecure_skip_verify: true
