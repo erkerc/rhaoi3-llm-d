@@ -1,0 +1,17 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: maas-gateway-config
+  namespace: openshift-ingress
+  labels:
+    platform.opendatahub.io/part-of: gatewayconfig
+  annotations:
+    platform.opendatahub.io/instance.name: maas-default-gateway
+    platform.opendatahub.io/type: OpenShift AI Self-Managed
+data:
+  service: |
+    metadata:
+      annotations:
+        service.beta.openshift.io/serving-cert-secret-name: "data-science-gateway-service-tls"
+    spec:
+      type: ClusterIP
